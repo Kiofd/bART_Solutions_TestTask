@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\bART_Solutions_TestTask.props" />
+</Project>

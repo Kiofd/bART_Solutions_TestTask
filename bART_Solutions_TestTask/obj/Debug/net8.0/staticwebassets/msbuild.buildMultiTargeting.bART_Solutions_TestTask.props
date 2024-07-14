@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\bART_Solutions_TestTask.props" />
+</Project>
