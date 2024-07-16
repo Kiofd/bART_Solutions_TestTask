@@ -8,8 +8,8 @@ using bART_Solutions_TestTask.Data;
 
 namespace bART_Solutions_TestTask.Data.Migrations
 {
-    [DbContext(typeof(StoreContext))]
-    partial class StoreContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(IncidentContext))]
+    partial class IncidentContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {

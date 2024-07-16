@@ -11,10 +11,10 @@ namespace bART_Solutions_TestTask.Controllers;
 [Route("api/[controller]")]
 public class IncidentController : ControllerBase
 {
-    private readonly StoreContext _context;
+    private readonly IncidentContext _context;
     private readonly IIncidentRepository _repository;
 
-    public IncidentController(StoreContext context, IIncidentRepository repository)
+    public IncidentController(IncidentContext context, IIncidentRepository repository)
     {
         _context = context;
         _repository = repository;

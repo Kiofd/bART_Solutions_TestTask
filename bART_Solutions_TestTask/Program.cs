@@ -11,7 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<StoreContext>(o =>
+builder.Services.AddDbContext<IncidentContext>(o =>
 {
     o.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });

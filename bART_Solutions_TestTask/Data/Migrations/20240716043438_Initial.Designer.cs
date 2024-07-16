@@ -9,8 +9,8 @@ using bART_Solutions_TestTask.Data;
 
 namespace bART_Solutions_TestTask.Data.Migrations
 {
-    [DbContext(typeof(StoreContext))]
-    [Migration("20240712183507_Initial")]
+    [DbContext(typeof(IncidentContext))]
+    [Migration("20240716043438_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -23,12 +23,6 @@ namespace bART_Solutions_TestTask.Data.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("CustomerId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("IncidentId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")

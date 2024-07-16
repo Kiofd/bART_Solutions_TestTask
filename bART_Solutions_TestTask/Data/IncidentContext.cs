@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace bART_Solutions_TestTask.Data;
 
-public class StoreContext : DbContext
+public class IncidentContext : DbContext
 {
-    public StoreContext(DbContextOptions options) : base(options)
+    public IncidentContext(DbContextOptions options) : base(options)
     {
         
     }

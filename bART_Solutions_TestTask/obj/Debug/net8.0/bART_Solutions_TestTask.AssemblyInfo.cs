@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("bART_Solutions_TestTask")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+28fa1e4e8b3ab0ab035b3db67ed9898eb3535410")]
 [assembly: System.Reflection.AssemblyProductAttribute("bART_Solutions_TestTask")]
 [assembly: System.Reflection.AssemblyTitleAttribute("bART_Solutions_TestTask")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -7,9 +7,9 @@ namespace bART_Solutions_TestTask.Repositories;
 
 public class IncidentRepository : IIncidentRepository
 {
-    private readonly StoreContext _context;
+    private readonly IncidentContext _context;
 
-    public IncidentRepository(StoreContext context) => _context = context;
+    public IncidentRepository(IncidentContext context) => _context = context;
 
     public async Task<Account> GetAccount(string accountName)
     {
