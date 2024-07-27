@@ -1,7 +1,9 @@
-﻿using bART_Solutions_TestTask.Data;
+﻿using AutoMapper;
+using bART_Solutions_TestTask.Data;
 using bART_Solutions_TestTask.DTO;
 using bART_Solutions_TestTask.Entities;
 using bART_Solutions_TestTask.Repositories;
+using bART_Solutions_TestTask.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,58 +13,55 @@ namespace bART_Solutions_TestTask.Controllers;
 [Route("api/[controller]")]
 public class IncidentController : ControllerBase
 {
-    private readonly IncidentContext _context;
-    private readonly IIncidentRepository _repository;
+    private readonly ICustomerService _customerService;
+    private readonly IAccountService _accountService;
+    private readonly IIncidentService _incidentService;
+    private readonly IMapper _mapper;
 
-    public IncidentController(IncidentContext context, IIncidentRepository repository)
+    public IncidentController(ICustomerService customerService, IMapper mapper, IIncidentService incidentService,
+        IAccountService accountService)
     {
-        _context = context;
-        _repository = repository;
-    }   
+        _customerService = customerService;
+        _mapper = mapper;
+        _incidentService = incidentService;
+        _accountService = accountService;
+    }
 
     [HttpPost("CreateIncident")]
     public async Task<ActionResult> CreateIncident(IncidentDto incidentDto)
     {
-        var account = await _repository.GetAccount(incidentDto.AccountName);
+        var isAccountExist = await _accountService.IsAccountExist(incidentDto.AccountName);
 
-        if (account == null) return NotFound();
+        if (!isAccountExist)
+            return NotFound();
 
-        var customer = await _repository.GetCustomer(incidentDto.Email);
+        var customer = _mapper.Map<Customer>(incidentDto);
 
-        if (customer != null)
-            await _repository.UpdateCustomer(customer, incidentDto, account.Id);
-        else
-            await _repository.CreateCustomer(incidentDto, account.Id);
+        await _customerService.CreateOrUpdateCustomer(customer, incidentDto.AccountName);
 
-        await _repository.CreateIncident(incidentDto.Description, account.Id);
+        await _incidentService.CreateIncident(incidentDto.Description, incidentDto.AccountName);
 
         return Ok();
-    }
-    
-    [HttpPost("CreateAccount")]
-    public async Task<ActionResult> CreateAccount(AccountDto accountDto)
-    {
-        var account = await _context.Accounts.FirstOrDefaultAsync(n => n.Name == accountDto.AccountName);
-
-        if (account != null)
-        {
-            return StatusCode(500);
-        }
-
-        await _context.Accounts.AddAsync(new Account
-        {
-            Name = accountDto.AccountName
-        });
-
-        var result = await _context.SaveChangesAsync() > 0;
-
-        if (result) return Ok();
-        return BadRequest();
+        // var account = await _repository.GetAccount(incidentDto.AccountName);
+        //
+        // if (account == null) return NotFound();
+        //
+        // var customer = await _repository.GetCustomer(incidentDto.Email);
+        //
+        // if (customer != null)
+        //     await _repository.UpdateCustomer(customer, incidentDto, account.Id);
+        // else
+        //     await _repository.CreateCustomer(incidentDto, account.Id);
+        //
+        // await _repository.CreateIncident(incidentDto.Description, account.Id);
+        //
+        // return Ok();
     }
 
-    [HttpGet("GetAllAccounts")]
-    public async Task<IEnumerable<Account>> GetAccounts()
+    [HttpPost("Incident")]
+    public async Task<ActionResult> Incident(string description, string account)
     {
-       return await _repository.GetAccounts();
+        _incidentService.CreateIncident(description, account);
+        return Ok();
     }
 }

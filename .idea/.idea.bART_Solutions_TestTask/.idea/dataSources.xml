@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="store" uuid="4a918a37-7f66-498b-a069-50749e16cae7">
+    <data-source source="LOCAL" name="incident" uuid="c9e22501-856a-466e-9279-7b68acae8599">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\Max\RiderProjects\bART_Solutions_TestTask\bART_Solutions_TestTask\store.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\Max\RiderProjects\bART_Solutions_TestTask\bART_Solutions_TestTask\incident.db</jdbc-url>
       <jdbc-additional-properties>
         <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
       </jdbc-additional-properties>

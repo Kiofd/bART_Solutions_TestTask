@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "K5LRLWsfmwRgnB9kWaU8TRjCFJENuum8z0aHghyweHZT+gct1NJ/hiIl/GO9DyPNS2IbXN/gEVkXuG7x0/iotw==",
+  "dgSpecHash": "7bqrfHqd0aRfW+ngavdCDoYimqYyKjL9brvC2KbBf90cypjWPkF68V1Jj20IWweFFLpZ9rCE5yEQMdVIrEnSgg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Max\\RiderProjects\\bART_Solutions_TestTask\\bART_Solutions_TestTask\\bART_Solutions_TestTask.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Max\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Max\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Max\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\Max\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",

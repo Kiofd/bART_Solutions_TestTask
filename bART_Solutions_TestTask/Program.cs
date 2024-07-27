@@ -1,4 +1,7 @@
+using AutoMapper;
 using bART_Solutions_TestTask.Data;
+using bART_Solutions_TestTask.Extension;
+using bART_Solutions_TestTask.Helpers;
 using bART_Solutions_TestTask.Repositories;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,13 +13,14 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAutoMapper(typeof(MappingProfiles).Assembly);
 
 builder.Services.AddDbContext<IncidentContext>(o =>
 {
     o.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
-builder.Services.AddScoped<IIncidentRepository, IncidentRepository>();
+builder.Services.AddRepository(); // Extesion/ServiceCollectionExtensions
 
 var app = builder.Build();
 

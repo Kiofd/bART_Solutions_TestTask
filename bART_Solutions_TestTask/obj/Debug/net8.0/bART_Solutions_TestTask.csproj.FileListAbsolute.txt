@@ -125,3 +125,5 @@ C:\Users\Max\RiderProjects\bART_Solutions_TestTask\bART_Solutions_TestTask\obj\D
 C:\Users\Max\RiderProjects\bART_Solutions_TestTask\bART_Solutions_TestTask\obj\Debug\net8.0\bART_Solutions_TestTask.pdb
 C:\Users\Max\RiderProjects\bART_Solutions_TestTask\bART_Solutions_TestTask\obj\Debug\net8.0\bART_Solutions_TestTask.genruntimeconfig.cache
 C:\Users\Max\RiderProjects\bART_Solutions_TestTask\bART_Solutions_TestTask\obj\Debug\net8.0\ref\bART_Solutions_TestTask.dll
+C:\Users\Max\RiderProjects\bART_Solutions_TestTask\bART_Solutions_TestTask\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Max\RiderProjects\bART_Solutions_TestTask\bART_Solutions_TestTask\obj\Debug\net8.0\bART_Solutions_TestTask.sourcelink.json

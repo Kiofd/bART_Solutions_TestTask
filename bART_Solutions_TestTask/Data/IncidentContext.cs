@@ -10,7 +10,7 @@ public class IncidentContext : DbContext
         
     }
 
-    public DbSet<Account> Accounts { get; set; }
+    public DbSet<Account?> Accounts { get; set; }
     public DbSet<Customer> Customers { get; set; }
     public DbSet<Incident> Incidents { get; set; }
 }
